@@ -1,12 +1,8 @@
-" Use Vim settings, rather then Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
+" These must go first as other settings can throw them off
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
 set nocompatible
-if has("gui_running")
-  set guifont=Consolas\ 11
-  set lines=37 columns=100
-  set guioptions-=T
-  set guioptions-=m
-endif " gui_running
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
