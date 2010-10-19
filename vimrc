@@ -1,8 +1,10 @@
 " These must go first as other settings can throw them off
+set nocompatible
+filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
+filetype plugin indent on
 
-set nocompatible
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -38,6 +40,7 @@ map Q gq
    set textwidth=96 " wrap at column 96 at Lenel
    set autoindent
    set fileformat=unix
+   "set formatprg=par\ -re
    " set relativenumber " not in this version
    syntax on
 
@@ -51,52 +54,47 @@ map Q gq
    map <A-v> "+P
 
    " Windows
-   map <C-J> <C-W>j<C-W>_
-   map <C-K> <C-W>k<C-W>_
+   nmap <C-Up> <C-W>k<C-W>_
+   nmap <C-Down> <C-W>j<C-W>_
 
    " Colors
    "colorscheme robinhood
-   colorscheme cloudsmidnight
+   colorscheme CloudsMidnight
    "colorscheme autumnleaf
 
    " Key mappings
    let mapleader=","
 
    " Swapping
-      " Swap characters
-   map <silent>s xp
-      " Swap lines
-   map <silent>S ddp
-   map <silent>U ddkP
+   nmap <silent>s xp
+   " Bubble lines
+   nmap <C-k> [e
+   nmap <C-j> ]e
+   vmap <C-k> [egv
+   vmap <C-j> ]egv
+
+   "Move in a wrapped line
+    nmap <M-j> gj
+    nmap <M-k> gk
 
    "Edit / Source .vimrc
-   nmap ,s :source ~/.vimrc<CR>
-   nmap ,v :tabe ~/.vimrc<CR>
+   nmap <Leader>s :source ~/.vimrc<CR>
+   nmap <Leader>v :tabe ~/.vimrc<CR>
+
+   " Spelling
+   set spelllang=en_us
+   nmap <silent><Leader>p :set spell!<CR>
 
    " File explorer
    nmap <F2> :Explore<CR>
    nmap <S-F2> :Sexplore<CR>
 
    " Tab mappings
-   map <silent><C-S-Up> :if tabpagenr() != tabpagenr('$')<cr>tabclose<cr>if tabpagenr() > 1<cr>tabprev<cr>endif<cr>else<cr>tabclose<cr>endif<cr>
-   map <silent><C-F4> :if tabpagenr() != tabpagenr('$')<cr>tabclose<cr>if tabpagenr() > 1<cr>tabprev<cr>endif<cr>else<cr>tabclose<cr>endif<cr>
-   map <silent><C-S-Down> :tabnew<CR>
-   map <silent><C-S-Left> gT
-   map <silent><C-S-Tab> gT
-   map <silent><C-S-Right> gt
-   map <silent><C-Tab> gt
-   map <silent><C-S-PageUp> :tabfirst<CR>
-   map <silent><C-S-PageDown> :tablast<CR>
-   map <silent><Leader>o :tabnew<CR>:Explore<CR>
-   map <silent><Leader>n :tabnew<CR>
-
-  " Load file specific settings
-  filetype plugin on
-
-  " Enable file type detection.  Use the default filetype settings, so that
-  " mail gets 'tw' set to 72, 'cindent' is on in C files, etc.  Also load
-  " indent files, to automatically do language-dependent indenting.
-  filetype plugin indent on
+   nmap <silent><C-F4> :if tabpagenr() != tabpagenr('$')<cr>tabclose<cr>if tabpagenr() > 1<cr>tabprev<cr>endif<cr>else<cr>tabclose<cr>endif<cr>
+   nmap <silent><C-S-Tab> gT
+   nmap <silent><C-Tab> gt
+   nmap <silent><Leader>o :tabnew<CR>:Explore<CR>
+   nmap <silent><Leader>n :tabnew<CR>
 
    " Set the SQL syntax default
    let g:sql_type_default='sqlanywhere'
@@ -107,6 +105,7 @@ map Q gq
        " Text files
        autocmd Filetype txt vim:spell
        autocmd Filetype txt spelllang=en_us
+       autocmd Filetype txt tw=0
    augroup END
 
   " Put these in an autocmd group, so that we can delete them easily.
@@ -122,3 +121,19 @@ map Q gq
       autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
   augroup END " vimrcEx
 
+  ""
+  "" Functions
+  ""
+  " Show syntax highlighting groups for word under cursor
+  nmap <C-S-P> :call <SID>SynStack()<CR>
+  function! <SID>SynStack()
+    if !exists("*synstack")
+      return
+    endif
+    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+  endfunc 
+
+  " Source the vimrc file after saving it
+  if has("autocmd")
+    autocmd bufwritepost .vimrc source $MYVIMRC
+  endif
