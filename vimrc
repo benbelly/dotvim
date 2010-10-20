@@ -40,6 +40,7 @@ map Q gq
    set textwidth=96 " wrap at column 96 at Lenel
    set autoindent
    set fileformat=unix
+   nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<CR>
    "set formatprg=par\ -re
    " set relativenumber " not in this version
    syntax on
@@ -96,6 +97,11 @@ map Q gq
    nmap <silent><Leader>o :tabnew<CR>:Explore<CR>
    nmap <silent><Leader>n :tabnew<CR>
 
+   map <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
+   map <leader>es :sp <C-R>=expand("%:p:h") . "/" <CR>
+   map <leader>ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
+   map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
+
    " Set the SQL syntax default
    let g:sql_type_default='sqlanywhere'
 
@@ -133,7 +139,3 @@ map Q gq
     echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
   endfunc 
 
-  " Source the vimrc file after saving it
-  if has("autocmd")
-    autocmd bufwritepost .vimrc source $MYVIMRC
-  endif
