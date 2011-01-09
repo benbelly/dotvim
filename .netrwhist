@@ -1,5 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/home/ben/.vim'
-let g:netrw_dirhist_2='/home/ben/Documents/school/ms/DPRL'
-let g:netrw_dirhist_3='/home/ben'
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/ben/Documents/school/ms/thesis'
+let g:netrw_dirhist_2='/home/ben/Documents/school/ms'
+let g:netrw_dirhist_3='/home/ben/Documents/school/ms/proposal'
+let g:netrw_dirhist_4='/home/ben/Documents/school/ms/epenthesis'
+let g:netrw_dirhist_5='/home/ben/Documents/school/ms'
+let g:netrw_dirhist_6='/home/ben/Documents/school/ms/epenthesis'
+let g:netrw_dirhist_7='/home/ben/Documents/school/ms/thesis'
+let g:netrw_dirhist_8='/home/ben/Documents/school/ms/epenthesis'
+let g:netrw_dirhist_9='/home/ben/Documents/school/ms/ReferenceSarkur'

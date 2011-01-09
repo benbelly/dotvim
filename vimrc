@@ -10,7 +10,8 @@ filetype plugin indent on
 set backspace=indent,eol,start
 map Q gq
 
-" Ben's stuff:
+   " Key mappings
+   let mapleader=","
 
    " Set Backup stuff
    set nobackup
@@ -20,7 +21,7 @@ map Q gq
    set ruler
    set showcmd
    set showmatch
-   set nu " Line numbering
+   "set nu " Line numbering
    set cursorline
 
    " Searching
@@ -28,7 +29,7 @@ map Q gq
    set hlsearch
    set ic " ignore case in searches
        " Un-hilite search results
-   map <C-N> :nohl<CR>
+   map <Leader><Space> :nohl<CR>
        " Un-hilite MultipleSearch results
    map <A-n> :SearchReset<CR>
    let g:MultipleSearchMaxColors=9 " Max colors for MultipleSearch
@@ -59,12 +60,12 @@ map Q gq
    nmap <C-Down> <C-W>j<C-W>_
 
    " Colors
-   "colorscheme robinhood
-   colorscheme CloudsMidnight
+   colorscheme robinhood
+   "colorscheme CloudsMidnight
    "colorscheme autumnleaf
 
-   " Key mappings
-   let mapleader=","
+   " Emacs
+   nmap <silent><C-O> i<CR><ESC>
 
    " Swapping
    nmap <silent>s xp
