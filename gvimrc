@@ -5,3 +5,5 @@ set guioptions-=T
 set guioptions-=m
 set guioptions-=r
 set guioptions-=R
+
+syntax on " Don't highlight syntax in terminals

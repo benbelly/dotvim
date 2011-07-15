@@ -41,10 +41,11 @@ map Q gq
    set textwidth=96 " wrap at column 96 at Lenel
    set autoindent
    set fileformat=unix
+   set nojoinspaces
    nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<CR>
    "set formatprg=par\ -re
    " set relativenumber " not in this version
-   syntax on
+   "syntax on
 
    " Clipboard
    set clipboard=autoselect
@@ -60,7 +61,10 @@ map Q gq
    nmap <C-Down> <C-W>j<C-W>_
 
    " Colors
-   colorscheme robinhood
+   colorscheme solarized
+   map <leader>l :let g:solarized_style="light"<CR>:colorscheme solarized<CR>
+   map <leader>d :let g:solarized_style="dark"<CR>:colorscheme solarized<CR>
+   "colorscheme robinhood
    "colorscheme CloudsMidnight
    "colorscheme autumnleaf
 
