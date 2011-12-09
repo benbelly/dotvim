@@ -62,13 +62,6 @@ map Q gq
    nmap <C-Up> <C-W>k<C-W>_
    nmap <C-Down> <C-W>j<C-W>_
 
-   " Colors
-   colorscheme solarized
-   map <leader>l :let g:solarized_style="light"<CR>:colorscheme solarized<CR>
-   map <leader>d :let g:solarized_style="dark"<CR>:colorscheme solarized<CR>
-   "colorscheme robinhood
-   "colorscheme CloudsMidnight
-   "colorscheme autumnleaf
 
    " Emacs
    nmap <silent><C-O> i<CR><ESC>
