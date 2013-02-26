@@ -106,13 +106,11 @@ map Q gq
    let g:sql_type_default='sqlanywhere'
 
    " File specific autocommands
-   augroup BenSyntax
-       au!
-       " Text files
-       autocmd Filetype txt vim:spell
-       autocmd Filetype txt spelllang=en_us
-       autocmd Filetype txt tw=0
-   augroup END
+   " Text files
+   autocmd BufNewFile,BufRead *.txt set ft=txt
+   autocmd BufNewFile,BufRead *.md set ft=markdown
+   autocmd Filetype txt setlocal spelllang=en_us spell tw=0 wrap linebreak
+   autocmd Filetype markdown setlocal spelllang=en_us spell tw=0 wrap linebreak
 
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
