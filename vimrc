@@ -40,7 +40,7 @@ map Q gq
    set tabstop=4
    set shiftwidth=4
    set expandtab
-   set textwidth=96 " wrap at column 96 at Lenel
+   set textwidth=79
    set autoindent
    set fileformat=unix
    set nojoinspaces
@@ -50,7 +50,7 @@ map Q gq
    "syntax on
 
    " Clipboard
-   set clipboard=autoselect
+   set clipboard=autoselect,unnamed,unnamedplus
         " Copy - note missing movement
    map <A-c> "+y
         " Cut - note missing movement

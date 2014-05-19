@@ -1,5 +1,5 @@
 
-set lines=37 columns=100
+set lines=37 columns=80
 set guioptions-=T
 set guioptions-=r
 set guioptions-=R
