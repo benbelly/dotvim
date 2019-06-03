@@ -4,10 +4,10 @@ set guioptions-=T
 set guioptions-=r
 set guioptions-=R
 
-set guifont=Menlo\ Regular:h15
+set guifont=Consolas:h18
 
 " Colors
-colorscheme solarized
+"colorscheme solarized
 map <leader>l :let g:solarized_style="light"<CR>:colorscheme solarized<CR>
 map <leader>d :let g:solarized_style="dark"<CR>:colorscheme solarized<CR>
 "colorscheme robinhood

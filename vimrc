@@ -1,7 +1,7 @@
 " These must go first as other settings can throw them off
 set nocompatible
 filetype off
-call pathogen#runtime_append_all_bundles()
+execute pathogen#infect()
 call pathogen#helptags()
 filetype plugin indent on
 
