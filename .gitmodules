@@ -28,3 +28,12 @@
 [submodule "bundle/vim-fireplace"]
 	path = bundle/vim-fireplace
 	url = https://github.com/tpope/vim-fireplace
+[submodule "bundle/vim-salve"]
+	path = bundle/vim-salve
+	url = https://github.com/tpope/vim-salve.git
+[submodule "bundle/vim-projectionist"]
+	path = bundle/vim-projectionist
+	url = https://github.com/tpope/vim-projectionist.git
+[submodule "bundle/vim-dispatch"]
+	path = bundle/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch.git
