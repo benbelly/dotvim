@@ -18,22 +18,19 @@
 	url = http://github.com/tpope/vim-unimpaired.git
 [submodule "bundle/vim-colors-solarized"]
 	path = bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
+	url = git@github.com:altercation/vim-colors-solarized.git
 [submodule "bundle/dracula-theme"]
 	path = bundle/dracula-theme
-	url = https://github.com/dracula/vim.git
-[submodule "bundle/BarretRen"]
-	path = bundle/BarretRen
-	url = https://github.com/BarretRen/vim-colorscheme
+	url = git@github.com:dracula/vim.git
 [submodule "bundle/vim-fireplace"]
 	path = bundle/vim-fireplace
-	url = https://github.com/tpope/vim-fireplace
+	url = git@github.com:tpope/vim-fireplace
 [submodule "bundle/vim-salve"]
 	path = bundle/vim-salve
-	url = https://github.com/tpope/vim-salve.git
+	url = git@github.com:tpope/vim-salve.git
 [submodule "bundle/vim-projectionist"]
 	path = bundle/vim-projectionist
-	url = https://github.com/tpope/vim-projectionist.git
+	url = git@github.com:tpope/vim-projectionist.git
 [submodule "bundle/vim-dispatch"]
 	path = bundle/vim-dispatch
-	url = https://github.com/tpope/vim-dispatch.git
+	url = git@github.com:tpope/vim-dispatch.git
