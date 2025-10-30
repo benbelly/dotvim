@@ -8,7 +8,6 @@ filetype plugin indent on
 
 " allow backspacing over everything in insert mode
 set background=dark
-call togglebg#map("<F5>")
 set backspace=indent,eol,start
 map Q gq
 
